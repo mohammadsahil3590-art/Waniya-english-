@@ -1,0 +1,400 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #eef4ff;
+  color: #17233c;
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100vh;
+  margin: auto;
+  background: linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #eef5ff 55%,
+    #e7f0ff 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+  height: 78px;
+  padding: 15px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3867ff, #7048ff);
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(70, 90, 220, 0.25);
+}
+
+.brand h1 {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.brand p {
+  font-size: 11px;
+  color: #7c879d;
+  margin-top: 3px;
+}
+
+.settings-btn {
+  width: 43px;
+  height: 43px;
+  border-radius: 14px;
+  background: white;
+  font-size: 20px;
+  box-shadow: 0 5px 18px rgba(55, 76, 120, 0.10);
+}
+
+/* =========================
+   TEACHER SECTION
+========================= */
+
+.teacher-section {
+  padding: 8px 20px 110px;
+  text-align: center;
+}
+
+.welcome {
+  margin-top: 5px;
+}
+
+.small-text {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6379d8;
+}
+
+.welcome h2 {
+  font-size: 32px;
+  margin-top: 5px;
+}
+
+.welcome p {
+  color: #7b879b;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* =========================
+   TEACHER AVATAR
+========================= */
+
+.teacher-container {
+  width: 230px;
+  height: 250px;
+  margin: 18px auto 5px;
+  position: relative;
+}
+
+.glow {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(89, 116, 255, 0.16);
+  top: 18px;
+  left: 10px;
+  filter: blur(5px);
+}
+
+.teacher-avatar {
+  position: absolute;
+  width: 190px;
+  height: 245px;
+  left: 20px;
+  top: 0;
+}
+
+/* face */
+
+.avatar-face {
+  position: absolute;
+  width: 105px;
+  height: 125px;
+  background: #f3c5a5;
+  border-radius: 48% 48% 45% 45%;
+  top: 25px;
+  left: 43px;
+  z-index: 3;
+  box-shadow: inset -7px -8px 15px rgba(150, 80, 45, 0.08);
+}
+
+.hair {
+  position: absolute;
+  width: 116px;
+  height: 115px;
+  top: -17px;
+  left: -5px;
+  background: #29223b;
+  border-radius: 55% 55% 40% 40%;
+  z-index: -1;
+}
+
+.hair::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 115px;
+  right: -9px;
+  top: 42px;
+  background: #29223b;
+  border-radius: 0 30px 35px 0;
+}
+
+.eyes {
+  position: absolute;
+  top: 53px;
+  left: 23px;
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eyes span {
+  width: 9px;
+  height: 9px;
+  background: #30283a;
+  border-radius: 50%;
+}
+
+.nose {
+  position: absolute;
+  width: 7px;
+  height: 12px;
+  border-right: 2px solid rgba(120, 70, 50, 0.35);
+  top: 69px;
+  left: 49px;
+  border-radius: 50%;
+}
+
+.mouth {
+  position: absolute;
+  width: 25px;
+  height: 10px;
+  border-bottom: 3px solid #b74d66;
+  border-radius: 50%;
+  top: 91px;
+  left: 40px;
+}
+
+/* neck */
+
+.neck {
+  position: absolute;
+  width: 35px;
+  height: 38px;
+  background: #eab797;
+  left: 78px;
+  top: 132px;
+  z-index: 2;
+}
+
+/* body */
+
+.body {
+  position: absolute;
+  width: 165px;
+  height: 105px;
+  background: #4c67db;
+  border-radius: 75px 75px 20px 20px;
+  top: 145px;
+  left: 13px;
+  overflow: hidden;
+}
+
+.shirt {
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  left: 35px;
+  top: -45px;
+}
+
+/* =========================
+   SPEECH BOX
+========================= */
+
+.speech-box {
+  max-width: 350px;
+  margin: 7px auto 18px;
+  background: white;
+  border-radius: 20px;
+  padding: 14px 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(52, 76, 125, 0.10);
+}
+
+.speech-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #edf1ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.speech-box strong {
+  font-size: 14px;
+}
+
+.speech-box p {
+  color: #7a8498;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+
+/* =========================
+   START BUTTON
+========================= */
+
+.start-btn {
+  width: min(350px, 100%);
+  height: 61px;
+  border-radius: 20px;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #3867ff,
+    #7048ff
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 12px 25px rgba(72, 82, 220, 0.28);
+  transition: 0.2s;
+}
+
+.start-btn:active {
+  transform: scale(0.97);
+}
+
+.mic-icon {
+  font-size: 22px;
+}
+
+.hint {
+  font-size: 11px;
+  color: #8993a7;
+  margin-top: 10px;
+}
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(500px, 100%);
+  height: 78px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #edf0f6;
+  z-index: 20;
+}
+
+.nav-item {
+  background: transparent;
+  min-width: 65px;
+  height: 58px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #929bad;
+}
+
+.nav-item span {
+  font-size: 20px;
+}
+
+.nav-item small {
+  font-size: 10px;
+}
+
+.nav-item.active {
+  color: #4d62dd;
+  background: #eef1ff;
+}
+
+/* =========================
+   SMALL SCREEN
+========================= */
+
+@media (max-height: 700px) {
+
+  .teacher-container {
+    transform: scale(0.88);
+    margin-top: 5px;
+    margin-bottom: -15px;
+  }
+
+  .welcome h2 {
+    font-size: 28px;
+  }
+
+  .speech-box {
+    margin-bottom: 12px;
+  }
+  }
